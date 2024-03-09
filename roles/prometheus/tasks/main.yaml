@@ -2,6 +2,7 @@
   ansible.builtin.unarchive: 
       src: https://github.com/prometheus/prometheus/releases/download/v2.50.1/prometheus-2.50.1.linux-amd64.tar.gz
       dest: /opt 
+      remote_src: yes
 
 - name: To prometheus service file
   ansible.builtin.template: 
