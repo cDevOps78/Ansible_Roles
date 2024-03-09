@@ -1,4 +1,4 @@
-- name: {{ role_name }} is the playbook
+- name: This is the playbook
   hosts: localhost
   roles:
     - {{ role_name }}
