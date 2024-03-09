@@ -1,4 +1,3 @@
 - name: This is the playbook
-  hosts: all
   roles:
     - "{{ role_name }}"
