@@ -16,4 +16,4 @@
 
 - name: Printing files
   ansible.builtin.debug: msg="{{ item.path }}"
-  loop: "{{ out.path }}"
+  loop: "{{ out.files }}"
