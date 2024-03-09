@@ -30,9 +30,9 @@
     chdir: /app
 
 - name: copy backend.service fiel 
-  ansible.builtin.template:
+  ansible.builtin.template: 
       src: backend.service
-      dest: /etc/systemd/system/backend.service 
+      dest: /etc/systemd/system/backend.service    
   tags:
     - copy_backend       
 
