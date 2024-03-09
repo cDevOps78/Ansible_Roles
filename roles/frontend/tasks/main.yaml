@@ -15,4 +15,5 @@
   register: out
 
 - name: Printing files
-  ansible.builtin.debug: msg="{{ out.files.path }}"
+  ansible.builtin.debug: msg="{{ item.path }}"
+  loop: "{{ out.path }}"
