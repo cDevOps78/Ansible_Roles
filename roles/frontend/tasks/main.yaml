@@ -16,6 +16,6 @@
 
 - name: Printing files
   ansible.builtin.shell: echo ' files = "{{ item.path }}"'
-  loop: "{{ out }}"
+  loop: "{{ out.files }}"
 
 
