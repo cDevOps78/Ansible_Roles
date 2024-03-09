@@ -1,3 +1,4 @@
 - name: This is the playbook
+  hosts: 172.31.82.197
   roles:
     - "{{ role_name }}"
