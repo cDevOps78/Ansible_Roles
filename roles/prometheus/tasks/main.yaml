@@ -14,4 +14,6 @@
       name: prometheus
       state: restarted
       daemon_reload: yes
-      enable: yes
+      enabled: yes
+
+
