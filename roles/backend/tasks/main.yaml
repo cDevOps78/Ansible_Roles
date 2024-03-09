@@ -34,7 +34,17 @@
       src: backend.service
       dest: /etc/systemd/system/backend.service    
   tags:
-    - copy_backend       
+    - copy_backend  
+
+- name: To install mysql
+  ansible.builtin.shell: dnf install mysql -y 
+  tags: mysql
+
+- name: To load schema
+  ansible.builtin.shell: mysql -h {{ mysql_server }} -uroot -pExpenseApp@1 < /app/schema/backend.sql 
+  tags: mysql
+
+
 
 
     
