@@ -24,7 +24,7 @@
       src: expense.conf
       dest: /etc/systemd/system/
   vars:
-      backend_server: localhost     
+      backend_server: 172.31.83.190     
   notify: file changes restarting nginx
 
       
