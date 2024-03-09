@@ -11,7 +11,7 @@
 - name: find files
   ansible.builtin.find:
       paths: /tmp/name1
-      file_type: file
+      file_type: directory
   register: out
 
 - name: Printing files
