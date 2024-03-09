@@ -11,7 +11,8 @@
 - name: Download frontend content
   ansible.builtin.unarchive:
       path: curl -o /tmp/frontend.zip https://expense-artifacts.s3.amazonaws.com/expense-frontend-v2.zip 
-      dest: /usr/share/nginx/html    
+      dest: /usr/share/nginx/html/
+      remote_src: yes    
 
 - name: Create Nginx Reverse Proxy Configuration.
   ansible.builtin.template: 
