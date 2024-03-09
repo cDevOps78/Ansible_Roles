@@ -1,0 +1,31 @@
+- name: To disable default nodejs
+  ansible.builtin.shell: dnf module disable nodejs -y
+
+- name: To enable nodejs:20
+  ansible.builtin.shell: dnf module enable nodejs:20 -y
+
+- name: To install nodejs
+  ansible.builtin.dnf:
+      name: nodejs
+      state: present
+
+- name: To add user
+  ansible.builtin.user:
+      name: expense
+
+- name: To create directory
+  ansible.builtin.file:
+      path: /app
+      state: directory
+
+- name: To download backend content
+  ansible.builtin.unarchive:
+      src: https://expense-artifacts.s3.amazonaws.com/expense-backend-v2.zip
+      dest: /app
+
+- name: To run npm install
+  ansible.builtin.shell: npm install
+  args:
+    chdir: /app
+
+    
