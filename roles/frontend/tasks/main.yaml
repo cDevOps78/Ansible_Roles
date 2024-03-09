@@ -1,0 +1,8 @@
+- name: This is frontend
+  ansible.builtin.shell: echo "This is first roles"
+- name: copying template
+  ansible.builtin.template:
+     src: expense.conf
+     dest: /tmp/expense.conf
+  vars:
+    backend_server: chaithanya.backend.online
