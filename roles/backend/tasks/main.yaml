@@ -22,10 +22,17 @@
   ansible.builtin.unarchive:
       src: https://expense-artifacts.s3.amazonaws.com/expense-backend-v2.zip
       dest: /app
+      remote_src: yes
 
 - name: To run npm install
   ansible.builtin.shell: npm install
   args:
     chdir: /app
+
+- name: copy backend.service fiel 
+  ansible.builtin.template:
+      src: expense.conf
+      dest: /etc/systemd/system/
+          
 
     
