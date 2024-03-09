@@ -1,21 +1,24 @@
-# - name: Install Nginx
-#   ansible.builtin.dnf:
-#       name: nginx
-#       state: installed
+- name: Install Nginx
+  ansible.builtin.dnf:
+      name: nginx
+      state: installed
 
-# - name: Remove nginx default content
-#   ansible.builtin.file: 
-#       path: /usr/share/nginx/html
-#       state: absent  
+- name: Remove nginx default content
+  ansible.builtin.file: 
+      path: /usr/share/nginx/html
+      state: absent 
 
-- name: find files
-  ansible.builtin.find:
-      paths: /tmp/name1
-      file_type: directory
-  register: out
+- name: Download frontend content
+  ansible.builtin.unarchive:
+      path: curl -o /tmp/frontend.zip https://expense-artifacts.s3.amazonaws.com/expense-frontend-v2.zip 
+      dest: /usr/share/nginx/html    
 
-- name: Printing files
-  ansible.builtin.shell: echo ' files = "{{ item.path }}"'
-  loop: "{{ out.files }}"
+- name: Create Nginx Reverse Proxy Configuration.
+  ansible.builtin.template: 
+      src: expense.conf
+      dest: /etc/systemd/system/
+  vars:
+      backend_server: localhost     
+  notify: file changes restarting nginx
 
-
+      
