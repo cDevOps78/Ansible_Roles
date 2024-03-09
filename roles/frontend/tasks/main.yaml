@@ -10,7 +10,7 @@
 
 - name: Download frontend content
   ansible.builtin.unarchive:
-      path: curl -o /tmp/frontend.zip https://expense-artifacts.s3.amazonaws.com/expense-frontend-v2.zip 
+      path: https://expense-artifacts.s3.amazonaws.com/expense-frontend-v2.zip 
       dest: /usr/share/nginx/html/
       remote_src: yes    
 
