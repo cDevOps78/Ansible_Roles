@@ -10,8 +10,8 @@
 
 - name: To create directory
   ansible.builtin.file:
-      path: /usr/share/nginx/html
-      state: present
+      path: /usr/share/nginx/html/
+      state: directory
 
 - name: Download frontend content
   ansible.builtin.unarchive:
