@@ -10,7 +10,7 @@
 
 - name: find files
   ansible.builtin.find:
-      paths: /etc/systemd
+      paths: /tmp/name1
       file_type: file
   register: out
 
