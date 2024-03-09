@@ -15,5 +15,7 @@
   register: out
 
 - name: Printing files
-  ansible.builtin.debug: var=item.path
+  ansible.builtin.shell: echo ' files = "{{ item.path }}"'
   loop: "{{ out.files }}"
+
+
