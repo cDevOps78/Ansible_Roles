@@ -26,4 +26,10 @@ scrape_configs:
       
   - job_name: "ec2"
     static_configs:
-      - targets: ["172.31.87.98:9100", "172.31.94.170:9100"]
+      - targets: ["172.31.87.98:9100"]
+        labels:
+          app: frontend
+      - targets: ["172.31.94.170:9100"]
+        labels:
+          app: backend     
+      

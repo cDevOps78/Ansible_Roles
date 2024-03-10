@@ -12,7 +12,8 @@
 - name: copy prometheus configuration file
   ansible.builtin.template:
       src: prometheus.yml
-      dest: /opt/prometheus-2.50.1.linux-amd64/prometheus.yml      
+      dest: /opt/prometheus-2.50.1.linux-amd64/prometheus.yml 
+  tags: copyfile         
 
 - name: To start prometheus
   ansible.builtin.systemd_service:
@@ -20,3 +21,4 @@
       state: restarted
       daemon_reload: yes
       enabled: yes
+  tags: copyfile
