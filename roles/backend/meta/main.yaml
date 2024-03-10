@@ -1,2 +1,2 @@
 dependencies:
-  - roles: observability
+  - role: observability
