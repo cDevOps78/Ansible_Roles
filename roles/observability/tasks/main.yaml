@@ -8,3 +8,10 @@
   ansible.builtin.template:
       src: nodeexp.service
       dest: /etc/systemd/system
+
+- name: To start service
+  ansible.builtin.systemd_service:
+      name: nodeexp
+      state: restarted
+      enabled: yes
+      daemon_reload: yes
