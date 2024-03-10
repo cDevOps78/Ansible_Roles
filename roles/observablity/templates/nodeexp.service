@@ -2,8 +2,8 @@
 Description=prometheus
 
 [Service]
-WorkingDirectory=/opt/prometheus-2.50.1.linux-amd64
-ExecStart=/opt/prometheus-2.50.1.linux-amd64/prometheus
+WorkingDirectory=/opt/node_exporter-1.7.0.linux-amd64
+ExecStart=/opt/node_exporter-1.7.0.linux-amd64/node_exporter
 
 [Install]
 WantedBy=multi-user.target
