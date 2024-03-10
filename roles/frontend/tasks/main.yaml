@@ -25,7 +25,7 @@
       dest: /etc/nginx/default.d
   tags: copy_expense    
   vars:
-      backend_server: 172.31.83.190     
+      backend_server: localhost     
   notify: file changes restarting nginx
 
       
