@@ -11,8 +11,8 @@
 
 - name: copy prometheus configuration file
   ansible.builtin.template:
-      src: prometheus.yml
-      dest: /opt/prometheus-2.50.1.linux-amd64/prometheus.yml 
+      src: prometheusold.yml
+      dest: /opt/prometheus-2.50.1.linux-amd64/prometheusold.yml
   tags: copyfile         
 
 - name: To start prometheus
